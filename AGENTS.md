@@ -46,7 +46,7 @@ Check status:
 
 Stop stack:
 
-- ./scripts/04-stop.sh
+- ./scripts/03-stop.sh
 
 ## Guardrails
 
@@ -68,14 +68,15 @@ Never:
 
 Generate higher-volume request load:
 
-- ./scripts/07-load-test.sh 20
+- Not available in this repo (use normal Copilot Chat activity to generate telemetry)
 
 ## Done Criteria
 
 - ./scripts/01-start.sh completes successfully.
-- ./scripts/02-status.sh reports all services UP.
-- ./scripts/03-smoke-test.sh returns /v1/models and chat completion.
-- ./scripts/05-emit-telemetry.sh reports accepted batches.
+- ./scripts/02-status.sh reports core endpoints UP.
+- OTel Collector health endpoint responds at http://localhost:13133.
+- OTLP HTTP endpoint responds at http://localhost:4318.
+- OTLP gRPC endpoint is reachable at localhost:4317.
 - Aspire UI is reachable at http://localhost:18888.
 
 ## Guardrails
