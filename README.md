@@ -54,18 +54,18 @@ Open this workspace in VS Code for these settings to take effect.
 ## Commands
 
 Start stack:
-```zsh
-zsh scripts/01-start.sh
+```sh
+./scripts/01-start.sh
 ```
 
 Check status:
-```zsh
-zsh scripts/02-status.sh
+```sh
+./scripts/02-status.sh
 ```
 
 Stop stack:
-```zsh
-zsh scripts/03-stop.sh
+```sh
+./scripts/03-stop.sh
 ```
 
 ## Endpoints

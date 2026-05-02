@@ -38,15 +38,15 @@ Trace-level data (tool calls, agent turns, skill invocations) is not yet emitted
 
 Start stack:
 
-- zsh scripts/01-start.sh
+- ./scripts/01-start.sh
 
 Check status:
 
-- zsh scripts/02-status.sh
+- ./scripts/02-status.sh
 
 Stop stack:
 
-- zsh scripts/04-stop.sh
+- ./scripts/04-stop.sh
 
 ## Guardrails
 
@@ -68,14 +68,14 @@ Never:
 
 Generate higher-volume request load:
 
-- zsh scripts/07-load-test.sh 20
+- ./scripts/07-load-test.sh 20
 
 ## Done Criteria
 
-- zsh scripts/01-start.sh completes successfully.
-- zsh scripts/02-status.sh reports all services UP.
-- zsh scripts/03-smoke-test.sh returns /v1/models and chat completion.
-- zsh scripts/05-emit-telemetry.sh reports accepted batches.
+- ./scripts/01-start.sh completes successfully.
+- ./scripts/02-status.sh reports all services UP.
+- ./scripts/03-smoke-test.sh returns /v1/models and chat completion.
+- ./scripts/05-emit-telemetry.sh reports accepted batches.
 - Aspire UI is reachable at http://localhost:18888.
 
 ## Guardrails
