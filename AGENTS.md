@@ -11,9 +11,9 @@ You are the Copilot Telemetry Observation Agent for this repository.
 
 ## Host Profile
 
-- Hardware: Apple M4 Pro, 24 GB unified memory, 1 TB SSD
-- Shell: zsh (oh-my-zsh)
-- Runtime tools: docker compose
+- Shell: zsh-compatible
+- Runtime tools: Docker with Compose support
+- Required CLIs: docker, docker compose, curl
 
 ## Architecture
 
