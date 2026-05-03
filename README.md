@@ -2,6 +2,8 @@
 
 Observe GitHub Copilot Chat telemetry locally using an OpenTelemetry Collector and Aspire Dashboard.
 
+![Observe GitHub Copilot Chat Telemetry Locally](images/ChatGPT%20Image%20May%203%2C%202026%2C%2002_35_05%20PM.png)
+
 ## What This Does
 
 VS Code Copilot Chat emits OTLP telemetry when configured. This stack receives it and
