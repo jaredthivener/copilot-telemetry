@@ -18,6 +18,7 @@ services:
       - "--config=/etc/otelcol-contrib/config.yaml"
     volumes:
       - ./config/otel-collector.yaml:/etc/otelcol-contrib/config.yaml:ro
+      - ./telemetry:/var/telemetry
     ports:
       - "4317:4317"
       - "4318:4318"

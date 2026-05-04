@@ -97,6 +97,18 @@ Stop stack:
 ./scripts/03-stop.sh
 ```
 
+View exported telemetry in terminal (formatted):
+```sh
+./scripts/04-show-telemetry.sh all
+```
+
+View traces with full wrapped prompt context:
+```sh
+./scripts/04-show-telemetry.sh traces --prompt-full
+```
+
+Detailed script usage is documented in `scripts/README.md`.
+
 ## Endpoints
 
 | Service | URL |

@@ -32,6 +32,12 @@ exporters:
       initial_interval: 1s
       max_interval: 30s
       max_elapsed_time: 10m
+  file/traces:
+    path: /var/telemetry/traces.jsonl
+  file/logs:
+    path: /var/telemetry/logs.jsonl
+  file/metrics:
+    path: /var/telemetry/metrics.jsonl
 
 service:
   extensions: [health_check]
@@ -50,12 +56,12 @@ service:
     traces:
       receivers: [otlp]
       processors: [memory_limiter, batch]
-      exporters: [otlp_grpc/aspire]
+      exporters: [otlp_grpc/aspire, file/traces]
     logs:
       receivers: [otlp]
       processors: [memory_limiter, batch]
-      exporters: [otlp_grpc/aspire]
+      exporters: [otlp_grpc/aspire, file/logs]
     metrics:
       receivers: [otlp]
       processors: [memory_limiter, batch]
-      exporters: [otlp_grpc/aspire]
+      exporters: [otlp_grpc/aspire, file/metrics]
