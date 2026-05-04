@@ -13,15 +13,19 @@
 
 ## What To Inspect In Aspire
 
+- Traces (resource/service filter set to `copilot-chat`):
+  - `invoke_agent`
+  - `chat`
+  - `execute_tool`
 - Metrics (resource/service filter set to `copilot-chat`):
   - `gen_ai.client.operation.duration`
   - `gen_ai.client.token.usage`
+  - `copilot_chat.tool.call.count`
+  - `copilot_chat.tool.call.duration`
+  - `copilot_chat.agent.invocation.duration`
+  - `copilot_chat.agent.turn.count`
+  - `copilot_chat.time_to_first_token`
   - `copilot_chat.session.count`
-- Structured logs:
+- Structured logs/events:
   - Per-request records.
   - `error.type` on failures.
-
-## Current Limitation
-
-- Copilot Chat 0.46.x exports metrics and logs.
-- Trace-level data is not exported yet.

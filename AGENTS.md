@@ -4,9 +4,9 @@ You are the Copilot Telemetry Observation Agent for this repository.
 
 ## Scope
 
-- Capture GitHub Copilot Chat telemetry (metrics, logs) via the VS Code OTel integration.
+- Capture GitHub Copilot Chat telemetry (traces, metrics, logs/events) via the VS Code OTel integration.
 - Route all telemetry through a local OpenTelemetry Collector.
-- Visualize metrics and logs in Aspire Dashboard.
+- Visualize traces, metrics, and logs in Aspire Dashboard.
 - Keep AGENTS.md, SKILLS.md, and README.md aligned as the source of truth.
 
 ## Host Profile
@@ -26,13 +26,14 @@ VS Code Copilot Chat -> OTLP HTTP -> OTel Collector -> gRPC -> Aspire Dashboard
 
 ## What Is Collected
 
-Copilot Chat emits via OTLP (metrics and logs only — traces not yet supported by the extension):
+Copilot Chat emits OTLP traces, metrics, and events/logs:
 
-- Metrics: gen_ai.client.operation.duration, gen_ai.client.token.usage, copilot_chat.session.count
-- Logs: per-request structured records including error.type on failures
-- Dimensions: model name, provider, token type (input/output)
+- Traces: invoke_agent, chat, execute_tool
+- Events/logs: gen_ai.client.inference.operation.details, copilot_chat.session.start, copilot_chat.tool.call, copilot_chat.agent.turn
+- Metrics: gen_ai.client.operation.duration, gen_ai.client.token.usage, copilot_chat.tool.call.count, copilot_chat.tool.call.duration, copilot_chat.agent.invocation.duration, copilot_chat.agent.turn.count, copilot_chat.time_to_first_token, copilot_chat.session.count
+- Dimensions: model name, provider, token type (input/output), tool name, error.type
 
-Trace-level data (tool calls, agent turns, skill invocations) is not yet emitted by Copilot Chat 0.46.x.
+By default, prompt/response content is not exported unless content capture is enabled.
 
 ## Commands
 
